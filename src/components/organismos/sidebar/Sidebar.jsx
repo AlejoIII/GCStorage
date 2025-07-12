@@ -7,7 +7,12 @@ import { Icon } from "@iconify/react";
 import {LinksArray, SecondarylinksArray} from "../../../utils/staticdata.jsx";
 
 export function Sidebar({ state, setState }) {
- 
+   const logoSrc = v.logo_blanco && v.logo
+    ? (window.matchMedia("(prefers-color-scheme: dark)").matches || (typeof document !== "undefined" && document.body.style.background === "#181818")
+        ? v.logo_blanco
+        : v.logo)
+    : v.logo;
+
   return (
     <Main $isopen={state.toString()}>
       <span className="Sidebarbutton" onClick={() => setState(!state)}>
@@ -16,7 +21,7 @@ export function Sidebar({ state, setState }) {
       <Container $isopen={state.toString()} className={state ? "active" : ""}>
         <div className="Logocontent">
           <div className="imgcontent">
-            <img src={v.logo} />
+            <img src={logoSrc} alt="Logo" />
           </div>
           <h2>GCStorage</h2>
         </div>
@@ -61,7 +66,7 @@ export function Sidebar({ state, setState }) {
           <div className="Links">
             <section className={state ? "content open" : "content"}>
               <Icon
-                color="#CE82FF"
+                color="#FFFF"
                 className="Linkicon"
                 icon="heroicons:ellipsis-horizontal-circle-solid"
               />
@@ -151,7 +156,7 @@ const Container = styled.div`
       .Linkicon {
         display: flex;
         font-size: 33px;
-
+        
         svg {
           font-size: 25px;
         }
