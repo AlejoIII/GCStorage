@@ -105,6 +105,7 @@ export const v = {
   flechaarribalarga: BsArrowUpShort,
   balance: FaBalanceScale,
   logo: logo,
+  logo_blanco: logo_blanco,
   iconogoogle: FcGoogle,
   iconocerrar: RiCloseLine,
   iconoguardar: BiSave,
