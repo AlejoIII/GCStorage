@@ -21,45 +21,39 @@ export const DesplegableUser = [
     tipo: "cerrarsesion",
   },
 ];
-
-
-
 //data SIDEBAR
 export const LinksArray = [
   {
     label: "Home",
-    icon: "noto-v1:house",
+    icon: "material-symbols:home-outline", 
     to: "/",
   },
   {
-    label: "VENDER",
-    icon: "flat-color-icons:shop",
+    label: "Vender",
+    icon: "mdi:cart-outline", 
     to: "/pos",
   },
   {
     label: "Kardex",
-    icon: "flat-ui:box",
+    icon: "mdi:archive-outline", 
     to: "/kardex",
   },
   {
     label: "Reportes",
-    icon: "flat-ui:graph",
+    icon: "mdi:chart-bar", 
     to: "/reportes",
   },
- 
 ];
+
 export const SecondarylinksArray = [
- 
   {
     label: "Configuración",
-    icon:"icon-park:setting-two",
+    icon: "material-symbols:settings-outline", 
     to: "/configurar",
-    color:"#CE82FF"
+    color: "#FFFF"
   },
-  
-  
-
 ];
+
 //temas
 export const TemasData = [
   {
