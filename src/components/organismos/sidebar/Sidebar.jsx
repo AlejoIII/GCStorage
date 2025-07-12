@@ -1,9 +1,10 @@
 import styled from "styled-components";
-import { v, LinksArray, SecondarylinksArray } from "../../../styles/variables";
+import { v } from "../../../styles/variables";
 import { NavLink } from "react-router-dom";
 import { ToggleTema } from "./ToggleTema.jsx";
 import { SidebarCard } from "./SidebarCard.jsx";
 import { Icon } from "@iconify/react";
+import {LinksArray, SecondarylinksArray} from "../../../utils/staticdata.jsx";
 
 export function Sidebar({ state, setState }) {
  

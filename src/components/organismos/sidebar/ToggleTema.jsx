@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import { useContext } from "react";
-import { ThemeContext } from "../../../App.jsx";
+import { useThemeStore } from "../../../store/ThemeStore";
 
 export function ToggleTema() {
-  const { setThemeUser, theme } = useContext(ThemeContext);
+  const { setTheme } = useThemeStore();
 
   return (
     <Container>
@@ -13,7 +12,7 @@ export function ToggleTema() {
             id="switch"
             className="input"
             type="checkbox"
-            onClick={setThemeUser}
+            onClick={setTheme}
           />
           <div className="icon icon--moon">
             <svg
