@@ -1,13 +1,9 @@
 import styled from "styled-components";
-import {
-  LinksArray,
-  SecondarylinksArray,
-  ToggleTema,
-} from "../../../index";
-import { v } from "../../../styles/variables";
+import { v, LinksArray, SecondarylinksArray } from "../../../styles/variables";
 import { NavLink } from "react-router-dom";
+import { ToggleTema } from "./ToggleTema.jsx";
+import { SidebarCard } from "./SidebarCard.jsx";
 import { Icon } from "@iconify/react";
-
 
 export function Sidebar({ state, setState }) {
  
@@ -21,7 +17,7 @@ export function Sidebar({ state, setState }) {
           <div className="imgcontent">
             <img src={v.logo} />
           </div>
-          <h2>Ada369 3.0</h2>
+          <h2>GCStorage</h2>
         </div>
         {LinksArray.map(({ icon, label, to }) => (
           <div
@@ -71,10 +67,7 @@ export function Sidebar({ state, setState }) {
               <span className={state ? "label_ver" : "label_oculto"}>MÁS</span>
             </section>
           </div>
-         
-         
         </div>
-
         <ToggleTema />
       </Container>
     </Main>
