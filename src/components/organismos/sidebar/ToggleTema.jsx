@@ -1,8 +1,12 @@
 import styled from "styled-components";
-import { useThemeStore } from "../../../store/ThemeStore";
+import { useContext } from "react";
+import { ThemeContext } from "../../../App.jsx";
 
 export function ToggleTema() {
-  const { setTheme } = useThemeStore();
+  const { setTheme } = useContext(ThemeContext);
+  const setThemeHandler = () => {
+    setTheme((theme) => (theme === "light" ? "dark" : "light"));
+  };
 
   return (
     <Container>
@@ -12,7 +16,7 @@ export function ToggleTema() {
             id="switch"
             className="input"
             type="checkbox"
-            onClick={setTheme}
+            onClick={setThemeHandler}
           />
           <div className="icon icon--moon">
             <svg
