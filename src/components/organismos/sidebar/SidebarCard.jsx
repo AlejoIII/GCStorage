@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { v, Btnsave, useAuthStore } from "../../../styles/variables";
+import { v } from "../../../styles/variables";
+import { Btnsave } from "../../moleculas/Btnsave.jsx";
 
 export function SidebarCard() {
 return (
