@@ -4,23 +4,23 @@ import { MyRoutes } from './routers/routers.jsx'
 import { Device } from './styles/breakpoint.jsx'
 import { createContext, useState } from 'react'
 import {Light, Dark} from './styles/themes.jsx'
+import { Sidebar } from './components/organismos/sidebar/sidebar.jsx'
 
-
-export const  ThemeContext = createContext(null);
+export const ThemeContext = createContext(null);
 
 function App() {
-  const [themeuser, setThemeUser] = useState("dark")
-  const theme = themeuser ==="light"? "light" : "dark";
-  const themestyle = theme === "light" ? Light : Dark;
+  const [themeuse, setTheme] = useState("dark")
+  const theme = themeuse ==="light"? "light" : "dark";
+  const themeStyle = theme === "light" ? Light : Dark;
   const [sidebarOpen, setSidebarOpen] = useState(false);
   return (
     <>
-    <ThemeContext.Provider value={{theme, setThemeUser}}>
-      <ThemeProvider theme={themestyle}>
+    <ThemeContext.Provider value={{theme, setTheme}}>
+      <ThemeProvider theme={themeStyle}>
         <AuthContextProvider>
           <Container className={sidebarOpen ? "active" : ""}>
             <section className="ContentSidebar">
-            Sidebar
+            <Sidebar state={sidebarOpen} setState={()=>setSidebarOpen(!sidebarOpen)}/>
             </section>
             <section className="ContentMenuambur">
             Menu
