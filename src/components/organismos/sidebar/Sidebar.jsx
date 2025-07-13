@@ -75,6 +75,8 @@ export function Sidebar({ state, setState }) {
           </div>
         </div>
         <ToggleTema />
+        <Divider />
+        {state && <SidebarCard />}
       </Container>
     </Main>
   );
