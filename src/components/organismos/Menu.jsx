@@ -15,7 +15,7 @@ import React, { useState } from "react";
         <NavBar>
             <section>
                 <MenuItem onClick={() => setclick(!click)}>
-                        <label className={click?"toggle active": "toggle"} 
+                        <label className={click ? "toggle active": "toggle"} 
                         for="checkbox">
                             <div class="bars" id="bar1"></div>
                             <div class="bars" id="bar2"></div>
@@ -55,7 +55,7 @@ import React, { useState } from "react";
    );
  }
 
- const Container = styled.div`s
+ const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
@@ -75,29 +75,29 @@ import React, { useState } from "react";
  `;
 
  const MenuItem = styled.span`
-    position: fiexd;
+    position: fixed;
     top: 2rem;
     z-index: 100;
-
     #checkbox {
         display: none;
     }
 
     .toggle {
         position: relative;
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         cursor: pointer;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 10px;
+        gap: 6px;
         transition-duration: .5s;
         &.active{
             transition-duration: .5s;
             transform: rotate(180deg);
           .bars {
+            color: ${({theme}) => theme.text};
             position: absolute;
             transition-duration: .5s;
           }
@@ -121,7 +121,7 @@ import React, { useState } from "react";
     .bars {
         width: 100%;
         height: 4px;
-        background-color: rgb(176, 92, 255);
+        background-color: ${({theme}) => theme.text};
         border-radius: 4px;
     }
 
@@ -140,6 +140,37 @@ import React, { useState } from "react";
     align-items: center;
       list-style: none;
       z-index: 10;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    background: ${(props) => `rgba(${props.theme.bodyRgba}, 0.85)`};    
+    backdrop-filter: blur(3px);
+    transform: ${(props) => props.$click === "true" ? "translateX(0)" : "translateX(1000%)"};
+    transition: all  0.3s ease;
+    .LinkContainer {
+        &:hover {
+          background: ${(props) => props.theme.bgAlpha};
+        }
+      .Links {
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: ${(props) => props.theme.text};
+        height: 80px;
+        .Linkicon {
+          padding: ${() => v.smSpacing} ${() => v.mdSpacing};
+          display: flex;
+          svg {
+            font-size: 25px;
+          }
+        }
+      }
+    }
 `;
   const Divider = styled.div`
     height: 1px;
