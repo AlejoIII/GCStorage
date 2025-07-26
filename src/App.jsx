@@ -5,6 +5,7 @@ import { Device } from './styles/breakpoint.jsx'
 import { createContext, useState } from 'react'
 import {Light, Dark} from './styles/themes.jsx'
 import { Sidebar } from './components/organismos/sidebar/sidebar.jsx'
+import { Menu } from './components/organismos/Menu.jsx'
 
 export const ThemeContext = createContext(null);
 
@@ -23,7 +24,7 @@ function App() {
             <Sidebar state={sidebarOpen} setState={()=>setSidebarOpen(!sidebarOpen)}/>
             </section>
             <section className="ContentMenuambur">
-            Menu
+            <Menu/>
             </section>
             <section className="ContentRoutes">
               <MyRoutes />

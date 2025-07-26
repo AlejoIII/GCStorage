@@ -15,12 +15,11 @@ import React, { useState } from "react";
         <NavBar>
             <section>
                 <MenuItem onClick={() => setclick(!click)}>
-                        <label className={click ? "toggle active": "toggle"} 
-                        for="checkbox">
-                            <div class="bars" id="bar1"></div>
-                            <div class="bars" id="bar2"></div>
-                            <div class="bars" id="bar3"></div>
-                        </label>
+                  <label className={click ? "toggle active" : "toggle"} htmlFor="checkbox">
+                    <div className="bars" id="bar1"></div>
+                    <div className="bars" id="bar2"></div>
+                    <div className="bars" id="bar3"></div>
+                  </label>
                 </MenuItem>
             </section>
             <MenuContainer $click={click.toString()}>
@@ -76,7 +75,7 @@ import React, { useState } from "react";
 
  const MenuItem = styled.span`
     position: fixed;
-    top: 2rem;
+    top: 1rem;
     z-index: 100;
     #checkbox {
         display: none;
@@ -92,28 +91,28 @@ import React, { useState } from "react";
         align-items: center;
         justify-content: center;
         gap: 6px;
-        transition-duration: .5s;
+        transition-duration: 0.5s;
         &.active{
-            transition-duration: .5s;
+            transition-duration: 0.5s;
             transform: rotate(180deg);
           .bars {
             color: ${({theme}) => theme.text};
             position: absolute;
-            transition-duration: .5s;
+            transition-duration: 0.5s;
           }
           #bar2 {
             transform: scaleX(0);
-            transition-duration: .5s;
+            transition-duration: 0.5s;
           }
           #bar1 {
             width: 100%;
             transform: rotate(45deg);
-            transition-duration: .5s;
+            transition-duration: 0.5s;
           }
           #bar3 {
             width: 100%;
             transform: rotate(-45deg);
-            transition-duration: .5s;
+            transition-duration: 0.5s;
           }
         }
     }
@@ -136,10 +135,10 @@ import React, { useState } from "react";
 
   const MenuContainer = styled.div`
     display: flex;
-    justify-content: space-between;
     align-items: center;
-      list-style: none;
-      z-index: 10;
+    justify-content: center;     
+    list-style: none;
+    z-index: 10;
     flex-direction: column;
     position: fixed;
     top: 0;
