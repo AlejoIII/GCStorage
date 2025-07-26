@@ -48,9 +48,9 @@ export const LinksArray = [
 export const SecondarylinksArray = [
   {
     label: "Configuración",
-    icon: "material-symbols:settings-outline", 
+    icon: "mdi:settings-outline", 
     to: "/configurar",
-    color: "#FFFF"
+    color: "#CE82FF"
   },
 ];
 

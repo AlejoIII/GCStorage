@@ -24,7 +24,7 @@ export const Light = {
   bg4: "#eaeaea",
   bg5: "#84d8ff",
   bg6:"rgba(132, 216, 255, 0.3)",
-  bgtotal: "#EDF3FB",
+  bgtotal: "#e0e0e0",
   bgtgderecha: "#eeeeee",
   colorToggle: "#F9743B",
   translateToggle: "-12px",
